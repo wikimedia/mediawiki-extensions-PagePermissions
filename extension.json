@@ -33,7 +33,7 @@
 			"reader": ["read"],
 			"editor": ["read", "edit"],
 			"manager": ["read", "edit", "move"],
-			"owner": ["read", "edit", "move", "rollback", "delete"]
+			"owner": ["read", "edit", "move", "rollback", "delete", "pagepermissions"]
 		}
 	},
 	"requires": {
