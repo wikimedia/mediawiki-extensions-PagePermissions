@@ -10,7 +10,7 @@ class PagePermissionsManager extends PermissionManager {
 	private $pagePermissionsPage;
 
 	/** @var array|null */
-	private $removedRights;
+	private $permittedRights;
 
 	/**
 	 * @param string $action
@@ -20,7 +20,7 @@ class PagePermissionsManager extends PermissionManager {
 	 * @return bool
 	 */
 	public function userCan( $action, User $user, LinkTarget $page, $rigor = self::RIGOR_SECURE ): bool {
-		$this->removedRights = RequestContext::getMain()->getConfig()->get( 'PagePermissionsRestrictionTypes' );
+		$this->permittedRights = RequestContext::getMain()->getConfig()->get( 'PagePermissionsRoles' );
 		$this->pagePermissionsPage = $page;
 		
 		$table = 'pagepermissions_rights';
@@ -36,10 +36,10 @@ class PagePermissionsManager extends PermissionManager {
 		$res = $dbr->select( $table, $vars, $conds, __METHOD__ );
 		
 		if ( $res->current() ) {
-			if ( in_array( $action, $this->removedRights[ $res->current()->type ] ) ) {
-				return false;
-			} else {
+			if ( in_array( $action, $this->permittedRights[ $res->current()->type ] ) ) {
 				return true;
+			} else {
+				return false;
 			}
 		} else {
 			return parent::userCan( $action, $user, $page, $rigor );
@@ -59,17 +59,17 @@ class PagePermissionsManager extends PermissionManager {
 		$action, User $user, LinkTarget $page, $rigor = self::RIGOR_SECURE, $ignoreErrors = []
 	): array {
 		$this->pagePermissionsPage = $page;
-		$this->removedRights = [];
+		$this->permittedRights = [];
 		$return = parent::getPermissionErrors( $action, $user, $page, $rigor, $ignoreErrors );
 		$this->pagePermissionsPage = null;
-		if ( $this->removedRights && in_array( $action, $this->removedRights ) ) {
+		if ( !$this->permittedRights ||  !in_array( $action, $this->permittedRights ) ) {
 			foreach ( $return as &$error ) {
 				if ( $error[0] === 'badaccess-groups' ) {
 					$error = [ 'badaccess-group0' ];
 				}
 			}
 		}
-		$this->removedRights = null;
+		$this->permittedRights = null;
 		MWDebug::log( $action . ' ' . var_export( $return, true ) );
 		wfDebug( __METHOD__ . ': ' . $action . ' ' . var_export( $return, true ) );
 		return $return;

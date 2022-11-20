@@ -29,11 +29,11 @@
 		"PagePermissionsManager": "includes/PagePermissionsManager.php"
 	},
 	"config": {
-		"PagePermissionsRestrictionTypes": {
-			"reader": ["edit", "move", "rollback", "delete", "pagepermissions"],
-			"editor": ["move", "rollback", "delete", "pagepermissions"],
-			"manager": ["delete"],
-			"owner": []
+		"PagePermissionsRoles": {
+			"reader": ["read"],
+			"editor": ["read", "edit"],
+			"manager": ["read", "edit", "move"],
+			"owner": ["read", "edit", "move", "rollback", "delete"]
 		}
 	},
 	"requires": {

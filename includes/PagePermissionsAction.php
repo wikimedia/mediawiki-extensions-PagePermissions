@@ -13,8 +13,8 @@ class PagePermissionsAction extends Action {
 	 * @inheritDoc
 	 */
 	public function show() {
-		$restrictions = RequestContext::getMain()->getConfig()->get( 'PagePermissionsRestrictionTypes' );
-		$roles = array_keys( $restrictions );
+		$permissions = RequestContext::getMain()->getConfig()->get( 'PagePermissionsRoles' );
+		$roles = array_keys( $permissions );
 		$form = new PagePermissionsForm( $this, $roles );
 		$form->execute();
 	}

@@ -17,17 +17,16 @@ git clone https://github.com/sanjay-thiyagarajan/PagePermissions.git
 ```
 ## Configuration  
 ### Parameters
-#### PagePermissionsRestrictionTypes  
-Add the custom roles and their respective restrictions, in **extension.json**  
-_Note that the permissions mentioned for each role **will be removed** from the users with the corresponding role with respect to the target page_  
+#### PagePermissionsRoles 
+Add the custom roles and their respective permissions in **extension.json**  
   
 **Example:**  
 ```
-"PagePermissionsRestrictionTypes": {
-		"reader": ["edit", "move", "rollback", "delete", "pagepermissions"],
-		"editor": ["move", "rollback", "delete", "pagepermissions"],
-		"manager": ["delete"],
-		"owner": []
+"PagePermissionsRoles": {
+	"reader": ["read"],
+	"editor": ["read", "edit"],
+	"manager": ["read", "edit", "move"],
+	"owner": ["read", "edit", "move", "rollback", "delete"]
 }
 ```
 #### User Rights  
