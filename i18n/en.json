@@ -8,5 +8,6 @@
 	"pagepermissions": "Page Permissions",
 	"right-pagepermissions": "Page Permissions",
 	"pagepermissions-desc": "This extension provides per-page per-user access control",
-	"pagepermissions-tab-text": "Page Permissions"
+	"pagepermissions-tab-text": "Page Permissions",
+	"pagepermissions-usernames-placeholder": "Enter the usernames seperated by a comma (,)"
 }

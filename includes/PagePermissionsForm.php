@@ -275,7 +275,8 @@ class PagePermissionsForm {
 			$text .= new OOUI\FieldLayout(
 				new OOUI\MultilineTextInputWidget( [
 					'name' => $role . '_permission',
-					'value' => implode( ',', $this->rights[ $role ] )
+					'value' => implode( ',', $this->rights[ $role ] ),
+					'placeholder' => wfMessage( 'pagepermissions-usernames-placeholder' )->text()
 				] ),
 				[
 					'align' => 'top',

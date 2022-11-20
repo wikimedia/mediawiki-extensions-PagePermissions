@@ -8,5 +8,6 @@
 	"pagepermissions": "Name of the extension",
 	"right-pagepermissions": "{{doc-right|pagepermissions}}\nThe right to manage per-page per-user access control",
 	"pagepermissions-desc": "{{desc|name=Page Permissions}}",
-	"pagepermissions-tab-text": "The text of the tab going to the manage per-page per-user access control"
+	"pagepermissions-tab-text": "The text of the tab going to the manage per-page per-user access control",
+	"pagepermissions-usernames-placeholder": "Placeholder for usernames input fields for each role"
 }
