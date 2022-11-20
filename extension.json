@@ -1,0 +1,43 @@
+{
+	"name": "PagePermissions",
+	"version": "1.0",
+	"author": [
+		"Sanjay Thiyagarajan"
+	],
+	"descriptionmsg": "pagepermissions-desc",
+	"license-name": "GPL-2.0-or-later",
+	"type": "other",
+	"load_composer_autoloader": true,
+	"MessagesDirs": {
+		"PagePermissions": [
+			"i18n"
+		]
+	},
+	"Actions": {
+		"pagepermissions": "PagePermissionsAction"
+	},
+	"Hooks": {
+		"ArticleDeleteComplete": "PagePermissionsHooks::onArticleDeleteComplete",
+		"SkinTemplateNavigation": "PagePermissionsHooks::onSkinTemplateNavigation",
+		"MediaWikiServices": "PagePermissionsHooks::onMediaWikiServices",
+		"LoadExtensionSchemaUpdates": "PagePermissionsHooks::onLoadExtensionSchemaUpdates"
+	},
+	"AutoloadClasses": {
+		"PagePermissionsAction": "includes/PagePermissionsAction.php",
+		"PagePermissionsForm": "includes/PagePermissionsForm.php",
+		"PagePermissionsHooks": "includes/PagePermissionsHooks.php",
+		"PagePermissionsManager": "includes/PagePermissionsManager.php"
+	},
+	"config": {
+		"PagePermissionsRestrictionTypes": {
+			"reader": ["edit", "move", "rollback", "delete", "pagepermissions"],
+			"editor": ["move", "rollback", "delete", "pagepermissions"],
+			"manager": ["delete"],
+			"owner": []
+		}
+	},
+	"requires": {
+		"MediaWiki": ">= 1.38.0"
+	},
+	"manifest_version": 1
+}

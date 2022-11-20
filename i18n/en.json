@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sanjay Thiyagarajan"
+		]
+	},
+	"action-pagepermissions": "manage per-page per-user access control",
+	"pagepermissions": "Page Permissions",
+	"right-pagepermissions": "Page Permissions",
+	"pagepermissions-desc": "This extension provides per-page per-user access control",
+	"pagepermissions-tab-text": "Page Permissions"
+}
