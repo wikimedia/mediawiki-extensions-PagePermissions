@@ -137,7 +137,7 @@ class PagePermissionsForm {
 	 * @throws MWException
 	 */
 	private function save(): bool {
-		// Permission check!
+		// Permission check
 		if ( $this->disabled ) {
 			$this->show();
 			return false;
