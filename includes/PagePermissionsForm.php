@@ -210,7 +210,6 @@ class PagePermissionsForm {
 						'pper_page_id' => $pageId,
 						'pper_permission' => $type,
 						'pper_user_id' => $userId,
-						'pper_page_namespace' => $namespace,
 						'pper_right_timestamp' => $timestamp,
 					];
 				}
