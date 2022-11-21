@@ -1,12 +1,12 @@
 BEGIN;
 
 CREATE TABLE pagepermissions (
-	page_id int unsigned NOT NULL,
-	userid int unsigned NOT NULL,
-	permission varchar(60) NOT NULL,
-	page_namespace int NOT NULL,
-	right_timestamp varbinary(14) NOT NULL default '',
-	PRIMARY KEY (page_namespace, page_id, userid)
+	pper_page_id int unsigned NOT NULL,
+	pper_user_id int unsigned NOT NULL,
+	pper_permission varchar(60) NOT NULL,
+	pper_page_namespace int NOT NULL,
+	pper_right_timestamp varbinary(14) NOT NULL default '',
+	PRIMARY KEY (pper_page_namespace, pper_page_id, pper_user_id)
 )/*$wgDBTableOptions*/;
 
 COMMIT;

@@ -92,7 +92,7 @@ class PagePermissionsHooks {
 		$dbw->delete(
 			'pagepermissions',
 			[
-				'page_id' => $id,
+				'pper_page_id' => $id,
 			],
 			__METHOD__
 		);

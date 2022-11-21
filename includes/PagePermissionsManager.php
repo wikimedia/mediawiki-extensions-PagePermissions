@@ -23,14 +23,14 @@ class PagePermissionsManager extends PermissionManager {
 		$this->pagePermissionsPage = $page;
 
 		$table = 'pagepermissions';
-		$vars[ 'user' ] = 'userid';
-		$vars['type'] = 'permission';
+		$vars[ 'user' ] = 'pper_user_id';
+		$vars['type'] = 'pper_permission';
 
 		$dbr = wfGetDB( DB_REPLICA );
 
 		$conds = [
-			'page_id' => $page->getArticleId(),
-			'userid' => $user->getId()
+			'pper_page_id' => $page->getArticleId(),
+			'pper_user_id' => $user->getId()
 		];
 		$res = $dbr->select( $table, $vars, $conds, __METHOD__ );
 

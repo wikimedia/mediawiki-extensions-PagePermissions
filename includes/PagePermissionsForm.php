@@ -112,15 +112,15 @@ class PagePermissionsForm {
 		$pageId = $this->title->getArticleID();
 
 		$table = 'pagepermissions';
-		$vars[ 'user' ] = 'userid';
-		$vars['type'] = 'permission';
+		$vars[ 'user' ] = 'pper_user_id';
+		$vars['type'] = 'pper_permission';
 
 		$dbr = wfGetDB( DB_REPLICA );
 
 		foreach ( $this->roles as $role ) {
 			$conds = [
-				'page_id' => $pageId,
-				'permission' => $role
+				'pper_page_id' => $pageId,
+				'pper_permission' => $role
 			];
 			$res = $dbr->select( $table, $vars, $conds, __METHOD__ );
 			foreach ( $res as $row ) {
@@ -150,7 +150,7 @@ class PagePermissionsForm {
 
 		if ( $title->exists() ) {
 			$tableName = 'pagepermissions';
-			$deleteConds = [ 'page_id' => $title->getArticleID() ];
+			$deleteConds = [ 'pper_page_id' => $title->getArticleID() ];
 		}
 
 		$dbw->startAtomic( __METHOD__ );
@@ -207,11 +207,11 @@ class PagePermissionsForm {
 				$userId = $users[$name];
 				if ( $pageId ) {
 					$rows[] = [
-						'page_id' => $pageId,
-						'permission' => $type,
-						'userid' => $userId,
-						'page_namespace' => $namespace,
-						'right_timestamp' => $timestamp,
+						'pper_page_id' => $pageId,
+						'pper_permission' => $type,
+						'pper_user_id' => $userId,
+						'pper_page_namespace' => $namespace,
+						'pper_right_timestamp' => $timestamp,
 					];
 				}
 			}
