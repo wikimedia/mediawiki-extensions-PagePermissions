@@ -8,11 +8,11 @@ class PagePermissionsHooks {
 
 	/**
 	 * Alter the structured navigation links in SkinTemplates
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SkinTemplateNavigation
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SkinTemplateNavigation::Universal
 	 * @param SkinTemplate $skinTemplate
 	 * @param array &$links
 	 */
-	public static function onSkinTemplateNavigation( SkinTemplate $skinTemplate, array &$links ) {
+	public static function onSkinTemplateNavigationUniversal( SkinTemplate $skinTemplate, array &$links ) {
 		$title = $skinTemplate->getTitle();
 		if ( !$title ) {
 			return;

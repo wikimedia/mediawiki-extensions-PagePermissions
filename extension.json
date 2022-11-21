@@ -18,7 +18,7 @@
 	},
 	"Hooks": {
 		"ArticleDeleteComplete": "PagePermissionsHooks::onArticleDeleteComplete",
-		"SkinTemplateNavigation": "PagePermissionsHooks::onSkinTemplateNavigation",
+		"SkinTemplateNavigation::Universal": "PagePermissionsHooks::onSkinTemplateNavigationUniversal",
 		"MediaWikiServices": "PagePermissionsHooks::onMediaWikiServices",
 		"LoadExtensionSchemaUpdates": "PagePermissionsHooks::onLoadExtensionSchemaUpdates"
 	},
