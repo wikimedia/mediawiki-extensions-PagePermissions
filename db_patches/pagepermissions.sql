@@ -1,6 +1,6 @@
 BEGIN;
 
-CREATE TABLE pagepermissions_rights (
+CREATE TABLE pagepermissions (
 	page_id int unsigned NOT NULL,
 	userid int unsigned NOT NULL,
 	permission varchar(60) NOT NULL,

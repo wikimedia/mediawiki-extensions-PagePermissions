@@ -111,7 +111,7 @@ class PagePermissionsForm {
 	private function loadData() {
 		$pageId = $this->title->getArticleID();
 
-		$table = 'pagepermissions_rights';
+		$table = 'pagepermissions';
 		$vars[ 'user' ] = 'userid';
 		$vars['type'] = 'permission';
 
@@ -149,7 +149,7 @@ class PagePermissionsForm {
 		$dbw = wfGetDB( DB_PRIMARY );
 
 		if ( $title->exists() ) {
-			$tableName = 'pagepermissions_rights';
+			$tableName = 'pagepermissions';
 			$deleteConds = [ 'page_id' => $title->getArticleID() ];
 		}
 

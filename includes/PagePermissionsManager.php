@@ -22,7 +22,7 @@ class PagePermissionsManager extends PermissionManager {
 		$this->permittedRights = RequestContext::getMain()->getConfig()->get( 'PagePermissionsRoles' );
 		$this->pagePermissionsPage = $page;
 
-		$table = 'pagepermissions_rights';
+		$table = 'pagepermissions';
 		$vars[ 'user' ] = 'userid';
 		$vars['type'] = 'permission';
 

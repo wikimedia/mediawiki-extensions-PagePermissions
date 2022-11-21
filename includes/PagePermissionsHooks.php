@@ -90,7 +90,7 @@ class PagePermissionsHooks {
 	) {
 		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->delete(
-			'pagepermissions_rights',
+			'pagepermissions',
 			[
 				'page_id' => $id,
 			],
@@ -105,6 +105,6 @@ class PagePermissionsHooks {
 	 * @param DatabaseUpdater $updater
 	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
-		$updater->addExtensionTable( 'pagepermissions_rights', __DIR__ . '/../db_patches/pagepermissions_rights.sql' );
+		$updater->addExtensionTable( 'pagepermissions', __DIR__ . '/../db_patches/pagepermissions.sql' );
 	}
 }
