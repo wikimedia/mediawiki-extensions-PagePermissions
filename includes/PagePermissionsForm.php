@@ -2,7 +2,6 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
-use OOUI\ProgressBarWidget;
 
 class PagePermissionsForm {
 
@@ -20,7 +19,7 @@ class PagePermissionsForm {
 
 	/** @var array */
 	private $rights;
-	
+
 	/** @var array */
 	private $roles;
 
@@ -39,7 +38,7 @@ class PagePermissionsForm {
 	 * @param Action $action
 	 * @param array $roles
 	 */
-	public function __construct( Action $action, Array $roles ) {
+	public function __construct( Action $action, array $roles ) {
 		// Set instance variables.
 		$this->action = $action;
 		$this->title = $action->getTitle();
@@ -66,11 +65,11 @@ class PagePermissionsForm {
 		$this->disabledAttrib = $this->disabled
 			? [ 'disabled' => 'disabled' ]
 			: [];
-	
+
 		$text = '';
-		
+
 		$this->roles = $roles;
-		
+
 		foreach ( $this->roles as $role ) {
 			$this->rights[ $role ] = [];
 		}
@@ -115,9 +114,9 @@ class PagePermissionsForm {
 		$table = 'pagepermissions_rights';
 		$vars[ 'user' ] = 'userid';
 		$vars['type'] = 'permission';
-		
+
 		$dbr = wfGetDB( DB_REPLICA );
-		
+
 		foreach ( $this->roles as $role ) {
 			$conds = [
 				'page_id' => $pageId,
@@ -125,7 +124,7 @@ class PagePermissionsForm {
 			];
 			$res = $dbr->select( $table, $vars, $conds, __METHOD__ );
 			foreach ( $res as $row ) {
-				$this->rights[ $row->type ][] = User::newFromId( $row->user ); 
+				$this->rights[ $row->type ][] = User::newFromId( $row->user );
 			}
 		}
 	}
@@ -156,19 +155,19 @@ class PagePermissionsForm {
 
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->delete( $tableName, $deleteConds, __METHOD__ );
-		
+
 		$usernames = $users = [];
-		
+
 		foreach ( $this->roles as $role ) {
 			$usernames[ $role ] = explode( ',', $request->getVal( $role . '_permission' ) );
 			$usernames[ $role ] = array_map( 'trim', $usernames[ $role ] );
 			$users[ $role ] = self::getUsersByName( $usernames[ $role ] );
 		}
-		
+
 		$rows = [];
-		
+
 		$timestamp = wfTimestampNow();
-		
+
 		foreach ( $this->roles as $role ) {
 			if ( $users[ $role ] ) {
 				foreach ( $users[ $role ] as $user ) {
@@ -264,13 +263,13 @@ class PagePermissionsForm {
 			);
 		} else {
 			$out->setPageTitle( $context->msg( 'protect-title', $title->getPrefixedText() ) );
-			$out->addWikiMsg( 'protect-text', wfEscapeWikiText( $title->getPrefixedText() ) );
+			$out->addWikiMsg( 'pagepermissions-form-desc', wfEscapeWikiText( $title->getPrefixedText() ) );
 		}
 
 		$out->enableOOUI();
-		
+
 		$text = '';
-		
+
 		foreach ( $this->roles as $role ) {
 			$text .= new OOUI\FieldLayout(
 				new OOUI\MultilineTextInputWidget( [
@@ -285,12 +284,12 @@ class PagePermissionsForm {
 			);
 		}
 		$text .= '<br>';
-		
+
 		$text .= new OOUI\ButtonInputWidget( [
-		    'type' => 'submit',
-		    'label' => 'Submit'
+			'type' => 'submit',
+			'label' => 'Submit'
 		] );
-		
+
 		$form = Html::rawElement( 'form', [ 'id' => 'pagepermissionsform', 'method' => 'post' ], $text );
 		$out->addHTML( $form );
 	}

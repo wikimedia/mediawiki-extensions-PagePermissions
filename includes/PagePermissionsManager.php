@@ -2,7 +2,6 @@
 
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Permissions\PermissionManager;
-use MediaWiki\User\UserIdentity;
 
 class PagePermissionsManager extends PermissionManager {
 
@@ -22,19 +21,19 @@ class PagePermissionsManager extends PermissionManager {
 	public function userCan( $action, User $user, LinkTarget $page, $rigor = self::RIGOR_SECURE ): bool {
 		$this->permittedRights = RequestContext::getMain()->getConfig()->get( 'PagePermissionsRoles' );
 		$this->pagePermissionsPage = $page;
-		
+
 		$table = 'pagepermissions_rights';
 		$vars[ 'user' ] = 'userid';
 		$vars['type'] = 'permission';
-		
+
 		$dbr = wfGetDB( DB_REPLICA );
-		
+
 		$conds = [
 			'page_id' => $page->getArticleId(),
 			'userid' => $user->getId()
 		];
 		$res = $dbr->select( $table, $vars, $conds, __METHOD__ );
-		
+
 		if ( $res->current() ) {
 			if ( in_array( $action, $this->permittedRights[ $res->current()->type ] ) ) {
 				return true;
@@ -62,7 +61,7 @@ class PagePermissionsManager extends PermissionManager {
 		$this->permittedRights = [];
 		$return = parent::getPermissionErrors( $action, $user, $page, $rigor, $ignoreErrors );
 		$this->pagePermissionsPage = null;
-		if ( !$this->permittedRights ||  !in_array( $action, $this->permittedRights ) ) {
+		if ( !$this->permittedRights || !in_array( $action, $this->permittedRights ) ) {
 			foreach ( $return as &$error ) {
 				if ( $error[0] === 'badaccess-groups' ) {
 					$error = [ 'badaccess-group0' ];
