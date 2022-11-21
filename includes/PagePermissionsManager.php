@@ -24,7 +24,7 @@ class PagePermissionsManager extends PermissionManager {
 
 		$table = 'pagepermissions';
 		$vars[ 'user' ] = 'pper_user_id';
-		$vars['type'] = 'pper_permission';
+		$vars['type'] = 'pper_role';
 
 		$dbr = wfGetDB( DB_REPLICA );
 

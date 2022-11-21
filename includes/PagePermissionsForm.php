@@ -113,14 +113,14 @@ class PagePermissionsForm {
 
 		$table = 'pagepermissions';
 		$vars[ 'user' ] = 'pper_user_id';
-		$vars['type'] = 'pper_permission';
+		$vars['type'] = 'pper_role';
 
 		$dbr = wfGetDB( DB_REPLICA );
 
 		foreach ( $this->roles as $role ) {
 			$conds = [
 				'pper_page_id' => $pageId,
-				'pper_permission' => $role
+				'pper_role' => $role
 			];
 			$res = $dbr->select( $table, $vars, $conds, __METHOD__ );
 			foreach ( $res as $row ) {
@@ -208,9 +208,9 @@ class PagePermissionsForm {
 				if ( $pageId ) {
 					$rows[] = [
 						'pper_page_id' => $pageId,
-						'pper_permission' => $type,
+						'pper_role' => $type,
 						'pper_user_id' => $userId,
-						'pper_right_timestamp' => $timestamp,
+						'pper_timestamp' => $timestamp,
 					];
 				}
 			}
