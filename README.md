@@ -1,7 +1,7 @@
 # PagePermissions  
 Manages access per user per page
-## Installation  
-1) [Download](https://www.mediawiki.org/wiki/Special:ExtensionDistributor/PagePermissions) the extension and place it in the ```extensions/``` directory.  
+== Installation ==  
+1) [Download](https://www.mediawiki.org/wiki/Special:ExtensionDistributor/PagePermissions) the extension and place it in the **extensions/** directory.  
 2) Add the following line in **LocalSettings.php**  
 ```
 wfLoadExtension( 'PagePermissions' );
@@ -15,9 +15,9 @@ Instead of downloading the zip archive you may also check this extension out via
 ```
 git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/PagePermissions
 ```
-## Configuration  
-### Parameters
-#### PagePermissionsRoles 
+== Configuration ==   
+== Parameters ==  
+== PagePermissionsRoles ==  
 Add the custom roles and their respective permissions in **extension.json**  
   
 **Example:**  
@@ -29,7 +29,7 @@ Add the custom roles and their respective permissions in **extension.json**
 	"owner": ["read", "edit", "move", "rollback", "delete", "pagepermissions']
 }
 ```
-#### User Rights  
+== User Rights ==  
 Allows users to use the "PagePermissions" page action in order to add or remove user rights for this page. Defaults to:
 ```
 $wgGroupPermissions['sysop']['pagepermissions'] = true;
