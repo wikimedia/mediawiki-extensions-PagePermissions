@@ -1,5 +1,5 @@
 # PagePermissions  
-Manages access per user per page
+Manages access per user per page  
 == Installation ==  
 1) [Download](https://www.mediawiki.org/wiki/Special:ExtensionDistributor/PagePermissions) the extension and place it in the **extensions/** directory.  
 2) Add the following line in **LocalSettings.php**  
@@ -16,8 +16,8 @@ Instead of downloading the zip archive you may also check this extension out via
 git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/PagePermissions
 ```
 == Configuration ==   
-== Parameters ==  
-== PagePermissionsRoles ==  
+=== Parameters ===  
+==== PagePermissionsRoles ====  
 Add the custom roles and their respective permissions in **extension.json**  
   
 **Example:**  
