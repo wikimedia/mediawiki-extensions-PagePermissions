@@ -1,7 +1,7 @@
 # PagePermissions  
 Manages access per user per page
 ## Installation  
-1) <a href = "https://github.com/sanjay-thiyagarajan/PagePermissions/archive/refs/heads/master.zip">Download</a> the extension and place it in the ```extensions/``` directory.  
+1) [Download](https://www.mediawiki.org/wiki/Special:ExtensionDistributor/PagePermissions) the extension and place it in the ```extensions/``` directory.  
 2) Add the following line in **LocalSettings.php**  
 ```
 wfLoadExtension( 'PagePermissions' );
@@ -13,7 +13,7 @@ wfLoadExtension( 'PagePermissions' );
   
 Instead of downloading the zip archive you may also check this extension out via Git:
 ```
-git clone https://github.com/sanjay-thiyagarajan/PagePermissions.git
+git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/PagePermissions
 ```
 ## Configuration  
 ### Parameters
