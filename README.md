@@ -16,8 +16,7 @@ Instead of downloading the zip archive you may also check this extension out via
 git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/PagePermissions
 ```
 == Configuration ==   
-=== Parameters ===  
-==== PagePermissionsRoles ====  
+=== PagePermissionsRoles ===  
 Add the custom roles and their respective permissions in **extension.json**  
   
 **Example:**  
@@ -29,7 +28,7 @@ Add the custom roles and their respective permissions in **extension.json**
 	"owner": ["read", "edit", "move", "rollback", "delete", "pagepermissions']
 }
 ```
-== User Rights ==  
+=== User Rights ===  
 Allows users to use the "PagePermissions" page action in order to add or remove user rights for this page. Defaults to:
 ```
 $wgGroupPermissions['sysop']['pagepermissions'] = true;
