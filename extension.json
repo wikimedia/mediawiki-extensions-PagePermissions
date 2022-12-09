@@ -29,11 +29,19 @@
 		"PagePermissionsManager": "includes/PagePermissionsManager.php"
 	},
 	"config": {
+		"AvailableRights": [
+			"pagepermissions"
+		],
 		"PagePermissionsRoles": {
 			"reader": [ "read" ],
 			"editor": [ "read", "edit" ],
 			"manager": [ "read", "edit", "move" ],
 			"owner": [ "read", "edit", "move", "rollback", "delete", "pagepermissions" ]
+		},
+		"GroupPermissions": {
+			"sysop": {
+				"pagepermissions": true
+			}
 		}
 	},
 	"requires": {
