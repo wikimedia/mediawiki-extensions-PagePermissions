@@ -8,7 +8,7 @@
 	"pagepermissions": "Page Permissions",
 	"right-pagepermissions": "Page Permissions",
 	"pagepermissions-desc": "This extension provides per-page per-user access control",
-	"pagepermissions-tab-text": "Page Permissions",
+	"pagepermissions-tab-text": "Permissions",
 	"pagepermissions-usernames-placeholder": "Enter the usernames seperated by a comma (,)",
-	"pagepermissions-form-desc": "You can add the usernames for whom you intend to assign the PagePermissions roles for <b>$1</b> using the text inputs assigned for each role. If you wish to change these roles and their respective permissions, please contact your wiki administrator."
+	"pagepermissions-form-desc": "Role-based permissions for <b>$1</b>"
 }
