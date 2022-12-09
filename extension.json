@@ -28,20 +28,20 @@
 		"PagePermissionsHooks": "includes/PagePermissionsHooks.php",
 		"PagePermissionsManager": "includes/PagePermissionsManager.php"
 	},
+	"AvailableRights": [
+		"pagepermissions"
+	],
+	"GroupPermissions": {
+		"sysop": {
+			"pagepermissions": true
+		}
+	},
 	"config": {
-		"AvailableRights": [
-			"pagepermissions"
-		],
 		"PagePermissionsRoles": {
 			"reader": [ "read" ],
 			"editor": [ "read", "edit" ],
 			"manager": [ "read", "edit", "move" ],
 			"owner": [ "read", "edit", "move", "rollback", "delete", "pagepermissions" ]
-		},
-		"GroupPermissions": {
-			"sysop": {
-				"pagepermissions": true
-			}
 		}
 	},
 	"requires": {
