@@ -1,0 +1,8 @@
+.errorbox {
+	color: #f00;
+	font-weight: bold;
+}
+
+label.oo-ui-labelElement-label {
+	text-transform: capitalize;
+}

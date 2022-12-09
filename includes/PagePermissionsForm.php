@@ -124,7 +124,8 @@ class PagePermissionsForm {
 			];
 			$res = $dbr->select( $table, $vars, $conds, __METHOD__ );
 			foreach ( $res as $row ) {
-				$this->rights[ $row->type ][] = User::newFromId( $row->user );
+				$user = User::newFromId( $row->user );
+				$this->rights[ $row->type ][] = $user->getName();
 			}
 		}
 	}
@@ -157,10 +158,8 @@ class PagePermissionsForm {
 		$dbw->delete( $tableName, $deleteConds, __METHOD__ );
 
 		$usernames = $users = [];
-
 		foreach ( $this->roles as $role ) {
-			$usernames[ $role ] = explode( ',', $request->getVal( $role . '_permission' ) );
-			$usernames[ $role ] = array_map( 'trim', $usernames[ $role ] );
+			$usernames[ $role ] = self::getUserNames( $request, $role . '_permission' );
 			$users[ $role ] = self::getUsersByName( $usernames[ $role ] );
 		}
 
@@ -250,47 +249,34 @@ class PagePermissionsForm {
 			);
 			return;
 		}
-
+		$config = [];
 		# Show an appropriate message if the user isn't allowed or able to change
 		# the protection settings at this time
 		if ( $this->disabled ) {
 			$out->setPageTitle(
-				$context->msg( 'protect-title-notallowed', $title->getPrefixedText() )
+				$context->msg( 'pagepermissions-not-allowed', $title->getPrefixedText() )
 			);
 			$out->addWikiTextAsInterface(
 				$out->formatPermissionsErrorMessage( $this->permErrors, 'pagepermissions' )
 			);
+			$out->addJsConfigVars( [
+				'permissionsError' => $this->permErrors
+			] );
+			$config[ 'permissionsError' ] = $this->permErrors;
 		} else {
-			$out->setPageTitle( $context->msg( 'protect-title', $title->getPrefixedText() ) );
+			$out->setPageTitle( $context->msg( 'pagepermissions-title', $title->getPrefixedText() ) );
 			$out->addWikiMsg( 'pagepermissions-form-desc', wfEscapeWikiText( $title->getPrefixedText() ) );
+			$config[ 'permissionsConfig' ] = [
+				'roles' => $this->roles,
+				'rights' => $this->rights
+			];
 		}
 
+		$allUsernames = self::getAllUserNames();
+
+		$out->addJsConfigVars( $config );
+		$out->addModules( 'ext.pagepermissions.form' );
 		$out->enableOOUI();
-
-		$text = '';
-
-		foreach ( $this->roles as $role ) {
-			$text .= new OOUI\FieldLayout(
-				new OOUI\MultilineTextInputWidget( [
-					'name' => $role . '_permission',
-					'value' => implode( ',', $this->rights[ $role ] ),
-					'placeholder' => wfMessage( 'pagepermissions-usernames-placeholder' )->text()
-				] ),
-				[
-					'align' => 'top',
-					'label' => ucfirst( $role )
-				]
-			);
-		}
-		$text .= '<br>';
-
-		$text .= new OOUI\ButtonInputWidget( [
-			'type' => 'submit',
-			'label' => 'Submit'
-		] );
-
-		$form = Html::rawElement( 'form', [ 'id' => 'pagepermissionsform', 'method' => 'post' ], $text );
-		$out->addHTML( $form );
 	}
 
 	/**
@@ -318,6 +304,35 @@ class PagePermissionsForm {
 			$users[$row->user_name] = (int)$row->user_id;
 		}
 		return $users;
+	}
+
+	/**
+	 * Returns submitted user names from UsersMultiselectWidget
+	 *
+	 * @param WebRequest $request
+	 * @param string $name
+	 * @return array
+	 */
+	private static function getUserNames( WebRequest $request, string $name ): array {
+		$value = $request->getVal( $name );
+		return $value ? explode( "\r\n", $value ) : [];
+	}
+
+	/**
+	 * Returns a list of all usernames except the existing usernames
+	 *
+	 * @return array
+	 */
+	private static function getAllUserNames() {
+		$usernames = [];
+		$dbr = wfGetDB( DB_REPLICA );
+		$res = $dbr->select( 'user', 'user_name' );
+		foreach ( $res as $row ) {
+			$usernames[] = $row->user_name;
+		}
+		// Remove Mediawiki default and maintenance script from usernames list
+		$usernames = array_slice( $usernames, 2 );
+		return $usernames;
 	}
 
 }

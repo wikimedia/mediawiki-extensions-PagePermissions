@@ -44,6 +44,24 @@
 			"owner": [ "read", "edit", "move", "rollback", "delete", "pagepermissions" ]
 		}
 	},
+	"ResourceModules": {
+		"ext.pagepermissions.form": {
+			"scripts": "pagepermissions.js",
+			"styles": "pagepermissions.css",
+			"dependencies": [
+				"mediawiki.widgets.UserInputWidget",
+				"mediawiki.widgets.UsersMultiselectWidget"
+			],
+			"messages": [
+				"pagepermissions-usernames-placeholder",
+				"duplicate-usernames-error"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "PagePermissions/modules"
+	},
 	"requires": {
 		"MediaWiki": ">= 1.38.0"
 	},
