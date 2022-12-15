@@ -13,5 +13,9 @@
 	"pagepermissions-not-allowed": "You are not permitted to manage the permissions for $1",
 	"pagepermissions-tab-text": "Permissions",
 	"pagepermissions-usernames-placeholder": "Usernames for $1 role",
-	"pagepermissions-form-desc": "Role-based permissions for <b>$1</b>"
+	"pagepermissions-form-desc": "Role-based permissions for <b>$1</b>",
+	"standardrole-reader": "Reader",
+	"standardrole-editor": "Editor",
+	"standardrole-manager": "Manager",
+	"standardrole-owner": "Owner"
 }

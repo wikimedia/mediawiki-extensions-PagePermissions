@@ -9,6 +9,7 @@
 			method: 'post'
 		} ),
 		i = 0,
+		standardRoles = [ 'reader', 'editor', 'manager', 'owner' ],
 		formComponents = [],
 		submit = new OO.ui.ButtonInputWidget( { label: 'Submit', type: 'submit' } );
 
@@ -27,6 +28,11 @@
 			input: { autocomplete: false },
 			selected: selected
 		} );
+
+		if ( standardRoles.indexOf( type ) !== -1 ) {
+			// eslint-disable-next-line mediawiki/msg-doc
+			type = mw.message( 'standardrole-' + type ).text();
+		}
 
 		formComponents.push( new OO.ui.FieldLayout( usersMultiselect, {
 			tagName: 'fieldset',
