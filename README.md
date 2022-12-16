@@ -24,8 +24,8 @@ Add the custom roles and their respective permissions in **extension.json**
 "PagePermissionsRoles": {
 	"reader": ["read"],
 	"editor": ["read", "edit"],
-	"manager": ["read", "edit", "move"],
-	"owner": ["read", "edit", "move", "rollback", "delete", "pagepermissions']
+	"manager": ["read", "edit", "move", "rollback"],
+	"owner": ["read", "edit", "move", "rollback", "delete", "pagepermissions"]
 }
 ```
 === User Rights ===  

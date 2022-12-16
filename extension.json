@@ -40,7 +40,7 @@
 		"PagePermissionsRoles": {
 			"reader": [ "read" ],
 			"editor": [ "read", "edit" ],
-			"manager": [ "read", "edit", "move" ],
+			"manager": [ "read", "edit", "move", "rollback" ],
 			"owner": [ "read", "edit", "move", "rollback", "delete", "pagepermissions" ]
 		}
 	},
