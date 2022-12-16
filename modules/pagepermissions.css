@@ -1,6 +1,7 @@
 .errorbox {
 	color: #f00;
 	font-weight: bold;
+	display: none;
 }
 
 label.oo-ui-labelElement-label {

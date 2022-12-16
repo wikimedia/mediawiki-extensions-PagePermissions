@@ -78,6 +78,7 @@
 			}
 			var duplicates = getDuplicates( usernames );
 			if ( duplicates.length ) {
+				$( '.errorbox:first' ).css( 'display', 'block' );
 				$( '.errorbox:first' ).text( mw.msg( 'duplicate-usernames-error', duplicates.join( ', ' ) ) );
 				return false;
 			} else {
