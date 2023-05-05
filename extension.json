@@ -17,7 +17,7 @@
 		"pagepermissions": "PagePermissionsAction"
 	},
 	"Hooks": {
-		"ArticleDeleteComplete": "PagePermissionsHooks::onArticleDeleteComplete",
+		"PageDeleteComplete": "PagePermissionsHooks::onPageDeleteComplete",
 		"SkinTemplateNavigation::Universal": "PagePermissionsHooks::onSkinTemplateNavigationUniversal",
 		"MediaWikiServices": "PagePermissionsHooks::onMediaWikiServices",
 		"LoadExtensionSchemaUpdates": "PagePermissionsHooks::onLoadExtensionSchemaUpdates"

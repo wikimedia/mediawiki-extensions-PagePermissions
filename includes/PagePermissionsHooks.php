@@ -76,23 +76,25 @@ class PagePermissionsHooks {
 	/**
 	 * Occurs after the delete article request has been processed
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ArticleDeleteComplete
-	 * @param WikiPage $wikiPage
-	 * @param User $user
+	 * @param MediaWiki\Page\ProperPageIdentity $page
+	 * @param MediaWiki\Permissions\Authority $deleter
 	 * @param string $reason
-	 * @param int $id
-	 * @param Content $content
-	 * @param LogEntry $logEntry
+	 * @param int $pageID
+	 * @param MediaWiki\Revision\RevisionRecord $deletedRev
+	 * @param ManualLogEntry $logEntry
 	 * @param int $archivedRevisionCount
 	 */
-	public static function onArticleDeleteComplete(
-		WikiPage $wikiPage, User $user, string $reason, int $id, Content $content,
-		LogEntry $logEntry, int $archivedRevisionCount
+	public static function onPageDeleteComplete(
+		MediaWiki\Page\ProperPageIdentity $page,
+		MediaWiki\Permissions\Authority $deleter, string $reason,
+		int $pageID, MediaWiki\Revision\RevisionRecord $deletedRev,
+		ManualLogEntry $logEntry, int $archivedRevisionCount
 	) {
 		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->delete(
 			'pagepermissions',
 			[
-				'pper_page_id' => $id,
+				'pper_page_id' => $pageID,
 			],
 			__METHOD__
 		);
