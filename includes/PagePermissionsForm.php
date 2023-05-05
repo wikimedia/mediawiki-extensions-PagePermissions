@@ -229,6 +229,11 @@ class PagePermissionsForm {
 		$out->setRobotPolicy( 'noindex,nofollow' );
 		$out->addBacklinkSubtitle( $title );
 
+		if ( $context->getRequest()->wasPosted() ) {
+			$successMsg = $context->msg( 'pagepermissions-saved' )->escaped();
+			$out->addHTML( Html::successBox( $successMsg ) );
+		}
+
 		if ( is_array( $err ) ) {
 			$out->wrapWikiMsg( "<div class='error'>\n$1\n</div>\n", $err );
 		} elseif ( is_string( $err ) ) {

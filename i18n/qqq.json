@@ -14,6 +14,7 @@
 	"pagepermissions-tab-text": "The text of the tab going to the manage per-page per-user access control",
 	"pagepermissions-usernames-placeholder": "Placeholder for usernames input fields for each role \n $1 - role name",
 	"pagepermissions-form-desc": "Description for Page Permissions form \n $1 - page name",
+	"pagepermissions-saved": "Shown after a user saves a form.",
 	"standardrole-reader": "Standard role name",
 	"standardrole-editor": "Standard role name",
 	"standardrole-manager": "Standard role name",
