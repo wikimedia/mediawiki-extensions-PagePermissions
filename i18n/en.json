@@ -7,16 +7,16 @@
 	"action-pagepermissions": "manage per-page per-user access control",
 	"pagepermissions": "Page Permissions",
 	"right-pagepermissions": "Page Permissions",
-	"duplicate-usernames-error": "These usernames are added under multiple roles - $1",
 	"pagepermissions-desc": "This extension provides per-page per-user access control",
 	"pagepermissions-title": "Permissions for $1",
 	"pagepermissions-not-allowed": "You are not permitted to manage the permissions for $1",
 	"pagepermissions-tab-text": "Permissions",
 	"pagepermissions-usernames-placeholder": "Usernames for $1 role",
 	"pagepermissions-form-desc": "Role-based permissions for <b>$1</b>",
+	"pagepermissions-standardrole-reader": "Reader",
+	"pagepermissions-standardrole-editor": "Editor",
+	"pagepermissions-standardrole-manager": "Manager",
+	"pagepermissions-standardrole-owner": "Owner",
 	"pagepermissions-saved": "Permissions were saved.",
-	"standardrole-reader": "Reader",
-	"standardrole-editor": "Editor",
-	"standardrole-manager": "Manager",
-	"standardrole-owner": "Owner"
+	"pagepermissions-duplicate-usernames-error": "These usernames are added under multiple roles - $1"
 }

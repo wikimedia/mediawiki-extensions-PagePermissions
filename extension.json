@@ -54,11 +54,11 @@
 			],
 			"messages": [
 				"pagepermissions-usernames-placeholder",
-				"duplicate-usernames-error",
-				"standardrole-reader",
-				"standardrole-editor",
-				"standardrole-manager",
-				"standardrole-owner"
+				"pagepermissions-duplicate-usernames-error",
+				"pagepermissions-standardrole-reader",
+				"pagepermissions-standardrole-editor",
+				"pagepermissions-standardrole-manager",
+				"pagepermissions-standardrole-owner"
 			]
 		}
 	},

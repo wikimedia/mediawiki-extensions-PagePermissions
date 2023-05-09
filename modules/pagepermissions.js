@@ -31,7 +31,7 @@
 
 		if ( standardRoles.indexOf( type ) !== -1 ) {
 			// eslint-disable-next-line mediawiki/msg-doc
-			type = mw.message( 'standardrole-' + type ).text();
+			type = mw.message( 'pagepermissions-standardrole-' + type ).text();
 		}
 
 		formComponents.push( new OO.ui.FieldLayout( usersMultiselect, {
@@ -79,7 +79,7 @@
 			var duplicates = getDuplicates( usernames );
 			if ( duplicates.length ) {
 				$( '.errorbox:first' ).css( 'display', 'block' );
-				$( '.errorbox:first' ).text( mw.msg( 'duplicate-usernames-error', duplicates.join( ', ' ) ) );
+				$( '.errorbox:first' ).text( mw.msg( 'pagepermissions-duplicate-usernames-error', duplicates.join( ', ' ) ) );
 				return false;
 			} else {
 				$( this ).off( 'submit' ).trigger( 'submit' );
