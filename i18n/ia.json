@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"action-pagepermissions": "gerer le controlo de accesso per pagina e per usator",
+	"pagepermissions": "Permissiones de pagina",
+	"right-pagepermissions": "Permissiones de pagina",
+	"pagepermissions-desc": "Iste extension forni un accesso de controlo per pagina e per usator",
+	"pagepermissions-title": "Permissiones pro $1",
+	"pagepermissions-not-allowed": "Tu non es autorisate a gerer le permissiones pro $1",
+	"pagepermissions-tab-text": "Permissiones",
+	"pagepermissions-usernames-placeholder": "Nomines de usator pro le rolo $1",
+	"pagepermissions-form-desc": "Permissiones basate sur rolos pro <b>$1</b>",
+	"pagepermissions-standardrole-reader": "Lector",
+	"pagepermissions-standardrole-editor": "Redactor",
+	"pagepermissions-standardrole-manager": "Gerente",
+	"pagepermissions-standardrole-owner": "Proprietario",
+	"pagepermissions-saved": "Permissiones ha essite salveguardate.",
+	"pagepermissions-duplicate-usernames-error": "Iste nomines de usator es addite in plure rolos: $1"
+}

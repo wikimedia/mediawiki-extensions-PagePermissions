@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"McDutchie",
 			"Sanjay Thiyagarajan"
 		]
 	},
@@ -8,15 +9,15 @@
 	"pagepermissions": "Name of the extension",
 	"right-pagepermissions": "{{doc-right|pagepermissions}}\nThe right to manage per-page per-user access control",
 	"pagepermissions-desc": "{{desc|name=Page Permissions}}",
-	"pagepermissions-title": "Title for permissions page \n $1 - page name",
-	"pagepermissions-not-allowed": "Title for permissions page when the user is not allowed \n $1 - page name",
+	"pagepermissions-title": "Title for permissions page \n* $1 - page name",
+	"pagepermissions-not-allowed": "Title for permissions page when the user is not allowed \n* $1 - page name",
 	"pagepermissions-tab-text": "The text of the tab going to the manage per-page per-user access control",
-	"pagepermissions-usernames-placeholder": "Placeholder for usernames input fields for each role \n $1 - role name",
-	"pagepermissions-form-desc": "Description for Page Permissions form \n $1 - page name",
+	"pagepermissions-usernames-placeholder": "Placeholder for usernames input fields for each role \n* $1 - role name",
+	"pagepermissions-form-desc": "Description for Page Permissions form \n* $1 - page name",
 	"pagepermissions-standardrole-reader": "Standard role name",
 	"pagepermissions-standardrole-editor": "Standard role name",
 	"pagepermissions-standardrole-manager": "Standard role name",
 	"pagepermissions-standardrole-owner": "Standard role name",
 	"pagepermissions-saved": "Shown after a user saves a form.",
-	"pagepermissions-duplicate-usernames-error": "Error message for duplicate usernames \n $1 - list of usernames"
+	"pagepermissions-duplicate-usernames-error": "Error message for duplicate usernames \n* $1 - list of usernames"
 }

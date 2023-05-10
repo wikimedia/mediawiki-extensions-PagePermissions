@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Coring"
+		]
+	},
+	"pagepermissions-form-desc": "Разрешения на основе ролей для <b>$1</b>",
+	"pagepermissions-standardrole-reader": "Читатель"
+}

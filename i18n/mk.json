@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"action-pagepermissions": "раководење со контралата на пристап по страница, по корисник",
+	"pagepermissions": "Дозволи за страници",
+	"right-pagepermissions": "Дозволи за страници",
+	"pagepermissions-desc": "Овој додаток возможува контрала на пристап по страница, по корисник",
+	"pagepermissions-title": "Дозволи за $1",
+	"pagepermissions-not-allowed": "Не ви е дозволено да раководите со дозволите за $1",
+	"pagepermissions-tab-text": "Дозволи",
+	"pagepermissions-usernames-placeholder": "Кориснички имиња за улогата $1",
+	"pagepermissions-form-desc": "Дозволи според улоги за <b>$1</b>",
+	"pagepermissions-standardrole-reader": "Читател",
+	"pagepermissions-standardrole-editor": "Уредник",
+	"pagepermissions-standardrole-manager": "Раководител",
+	"pagepermissions-standardrole-owner": "Сопственик",
+	"pagepermissions-saved": "Дозволите се зачувани.",
+	"pagepermissions-duplicate-usernames-error": "Овие кориснички имиа се додадени под повеќе различни улоги — $1"
+}
