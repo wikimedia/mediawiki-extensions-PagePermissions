@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"action-pagepermissions": "upravljanje nadzora dostopa po strani in po uporabniku",
+	"pagepermissions": "Dovoljenja strani",
+	"right-pagepermissions": "Dovoljenja strani",
+	"pagepermissions-desc": "Ta razširitev omogoča nadzor dostopa po strani in po uporabniku",
+	"pagepermissions-title": "Dovoljenja za $1",
+	"pagepermissions-not-allowed": "Nimate dovoljenja za upravljanje dovoljenj za $1",
+	"pagepermissions-tab-text": "Dovoljenja",
+	"pagepermissions-usernames-placeholder": "Uporabniška imena za vlogo $1",
+	"pagepermissions-form-desc": "Dovoljenja na podlagi vlog za <b>$1</b>"
+}
