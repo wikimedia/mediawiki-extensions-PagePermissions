@@ -4,7 +4,9 @@
 			"Saraiki"
 		]
 	},
+	"pagepermissions": "ورقہ اجازتاں",
 	"pagepermissions-tab-text": "اجازتاں",
+	"pagepermissions-standardrole-reader": "قاری",
 	"pagepermissions-standardrole-editor": "ایڈیٹر",
 	"pagepermissions-standardrole-manager": "منیجر",
 	"pagepermissions-standardrole-owner": "مالک"
