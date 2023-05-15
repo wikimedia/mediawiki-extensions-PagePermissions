@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kareyac"
+		]
+	},
+	"pagepermissions-tab-text": "Дазволы",
+	"pagepermissions-standardrole-reader": "Чытач",
+	"pagepermissions-standardrole-editor": "Рэдактар"
+}

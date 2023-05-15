@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Adriendelucca"
+		]
+	},
+	"pagepermissions": "Aotreoù ar pajennoù",
+	"pagepermissions-title": "Aotreoù evit $1",
+	"pagepermissions-tab-text": "Aotreoù",
+	"pagepermissions-standardrole-reader": "Lenner",
+	"pagepermissions-standardrole-editor": "Aozer",
+	"pagepermissions-standardrole-manager": "Merour",
+	"pagepermissions-standardrole-owner": "Perc'henn"
+}
