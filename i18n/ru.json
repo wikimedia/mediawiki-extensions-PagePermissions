@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Coring"
+			"Coring",
+			"Kareyac"
 		]
 	},
+	"pagepermissions-tab-text": "Разрешения",
 	"pagepermissions-form-desc": "Разрешения на основе ролей для <b>$1</b>"
 }

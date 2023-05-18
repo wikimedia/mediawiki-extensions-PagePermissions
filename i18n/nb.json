@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"action-pagepermissions": "behandle tilgangskontroll på bruker- og sidebasis",
+	"pagepermissions": "Sidetillatelser",
+	"right-pagepermissions": "Sidetillatelser",
+	"pagepermissions-desc": "Denne utvidelsen gjør det mulig å kontrollere tilganger til sider på brukerbasis",
+	"pagepermissions-title": "Tillatelser for $1",
+	"pagepermissions-not-allowed": "Du har ikke lov til å behandle tillatelser for $1",
+	"pagepermissions-tab-text": "Tillatelser",
+	"pagepermissions-usernames-placeholder": "Brukernavn for rollen $1",
+	"pagepermissions-form-desc": "Rollebaserte tillatelser for <b>$1</b>"
+}

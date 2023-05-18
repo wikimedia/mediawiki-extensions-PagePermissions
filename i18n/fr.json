@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Verdy p"
+		]
+	},
+	"action-pagepermissions": "gérer le contrôle d’accès par page et par utilisateur",
+	"pagepermissions": "Autorisations par page",
+	"right-pagepermissions": "Autorisations par page",
+	"pagepermissions-desc": "Cette extension fournit le contrôle d’accès par page et par utilisateur",
+	"pagepermissions-title": "Autorisations pour $1",
+	"pagepermissions-not-allowed": "Vous n’êtes pas autorisé{{GENDER:||e}} à gérer les autorisations pour $1",
+	"pagepermissions-tab-text": "Autorisations",
+	"pagepermissions-usernames-placeholder": "Noms d’utilisateur pour le rôle $1",
+	"pagepermissions-form-desc": "Autorisations basées sur les rôles pour <b>$1</b>"
+}

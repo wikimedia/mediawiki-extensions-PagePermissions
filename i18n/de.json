@@ -1,6 +1,8 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Brettchenweber"
+		]
 	},
 	"action-pagepermissions": "Zugriffskontrolle pro Seite und Benutzer zu verwalten",
 	"pagepermissions": "Seitenberechtigungen",
@@ -9,6 +11,6 @@
 	"pagepermissions-title": "Berechtigungen für $1",
 	"pagepermissions-not-allowed": "Du bist nicht berechtigt, die Berechtigungen für $1 zu verwalten",
 	"pagepermissions-tab-text": "Berechtigungen",
-	"pagepermissions-usernames-placeholder": "Benutzernamen für $1 Rolle",
+	"pagepermissions-usernames-placeholder": "Benutzernamen für $1-Rolle",
 	"pagepermissions-form-desc": "Rollenbasierte Berechtigungen für <b>$1</b>"
 }

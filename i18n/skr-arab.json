@@ -4,5 +4,8 @@
 			"Saraiki"
 		]
 	},
+	"pagepermissions": "ورقہ اجازتاں",
+	"right-pagepermissions": "ورقہ اجازتاں",
+	"pagepermissions-title": "$1 کیتے اجازتاں",
 	"pagepermissions-tab-text": "اجازتاں"
 }

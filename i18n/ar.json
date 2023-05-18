@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Alshamiri1"
+		]
+	},
+	"action-pagepermissions": "إدارة التحكم في الوصول لكل صفحة لكل مستخدم",
+	"pagepermissions": "أذونات الصفحة",
+	"right-pagepermissions": "أذونات الصفحة",
+	"pagepermissions-desc": "يوفر هذا الامتداد التحكم في الوصول لكل صفحة لكل مستخدم",
+	"pagepermissions-title": "أذونات لـ $1",
+	"pagepermissions-not-allowed": "لا يُسمح لك بإدارة الأذونات لـ $1",
+	"pagepermissions-tab-text": "أذونات",
+	"pagepermissions-usernames-placeholder": "أسماء المستخدمين لدور $1",
+	"pagepermissions-form-desc": "الأذونات المستندة إلى الأدوار لـ <b>$1</b>"
+}
