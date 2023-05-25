@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ykhwong"
+		]
+	},
+	"pagepermissions": "문서 권한",
+	"right-pagepermissions": "문서 권한",
+	"pagepermissions-title": "$1의 권한",
+	"pagepermissions-not-allowed": "$1에 대한 권한을 관리할 권한이 없습니다.",
+	"pagepermissions-tab-text": "권한",
+	"pagepermissions-usernames-placeholder": "$1 역할의 사용자 이름",
+	"pagepermissions-standardrole-reader": "독자",
+	"pagepermissions-standardrole-editor": "편집자",
+	"pagepermissions-standardrole-manager": "관리자",
+	"pagepermissions-standardrole-owner": "소유자",
+	"pagepermissions-saved": "권한이 저장되었습니다.",
+	"pagepermissions-duplicate-usernames-error": "이 사용자 이름은 여러 역할에 추가됩니다 - $1"
+}
