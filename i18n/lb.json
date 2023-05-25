@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"action-pagepermissions": "geréiere vun der Zougangskontroll pro Benotzer a pro Säit",
+	"pagepermissions": "Autorisatioune pro Säit",
+	"right-pagepermissions": "Autorisatioune pro Säit",
+	"pagepermissions-desc": "Dës Erweiderung erlaabt eng Zougangskontroll pro Benotzer a pro Säit",
+	"pagepermissions-title": "Autorisatioune fir $1",
+	"pagepermissions-not-allowed": "Dir sidd net berechtegt fir d'Autorisatioune fir $1 ze geréieren",
+	"pagepermissions-tab-text": "Autorisatiounen",
+	"pagepermissions-usernames-placeholder": "Benotzernimm fir d'Roll $1",
+	"pagepermissions-form-desc": "Autorisatiounen déi op de Rolle baséieren fir <b>$1</b>"
+}
