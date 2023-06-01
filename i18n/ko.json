@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ykhwong"
+		]
+	},
+	"pagepermissions": "문서 권한",
+	"right-pagepermissions": "문서 권한",
+	"pagepermissions-title": "$1의 권한",
+	"pagepermissions-not-allowed": "$1에 대한 권한을 관리할 권한이 없습니다.",
+	"pagepermissions-tab-text": "권한",
+	"pagepermissions-usernames-placeholder": "$1 역할의 사용자 이름"
+}

@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"action-pagepermissions": "לנהל הרשאות לפי דף ולפי משתמש",
+	"pagepermissions": "הרשאות דף",
+	"right-pagepermissions": "הרשאות דף",
+	"pagepermissions-desc": "ההרחבה הזאת מאפשרת לנהל הרשאות דף ברמת משתמש",
+	"pagepermissions-title": "ההרשאות של $1",
+	"pagepermissions-not-allowed": "אין לך הרשאה לנהל את ההרשאות עבור $1",
+	"pagepermissions-tab-text": "הרשאות",
+	"pagepermissions-usernames-placeholder": "שמות משתמש לתפקיד $1",
+	"pagepermissions-form-desc": "הרשאות מבוססות תפקידים עבור <b>$1</b>"
+}
