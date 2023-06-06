@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sabelöga"
+		]
+	},
+	"action-pagepermissions": "hantera åtkomstkontroll per sida och per användare",
+	"pagepermissions": "Sidbehörigheter",
+	"right-pagepermissions": "sidbehörigheter",
+	"pagepermissions-desc": "Tillägget erbjuder åtkomstkontroll per sida och per användare",
+	"pagepermissions-title": "Behörigheter för $1",
+	"pagepermissions-not-allowed": "Du har inte tillåtelse att hantera behörigheter för $1",
+	"pagepermissions-tab-text": "Behörigheter",
+	"pagepermissions-usernames-placeholder": "Användarnamn för $1-roll",
+	"pagepermissions-form-desc": "Rollbaserade behörigheter för <b>$1</b>",
+	"pagepermissions-standardrole-reader": "Läsare",
+	"pagepermissions-standardrole-editor": "Redigerare",
+	"pagepermissions-standardrole-manager": "Hanterare",
+	"pagepermissions-standardrole-owner": "Ägare",
+	"pagepermissions-saved": "Behörigheterna sparades.",
+	"pagepermissions-duplicate-usernames-error": "Dessa användarnamn läggs till under flera roller - $1"
+}
