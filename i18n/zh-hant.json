@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"action-pagepermissions": "管理各頁面及各使用者的存取控制",
+	"pagepermissions": "頁面權限",
+	"right-pagepermissions": "頁面權限",
+	"pagepermissions-desc": "此擴充功能提供各頁面及各使用者的存取控制",
+	"pagepermissions-title": "$1的權限",
+	"pagepermissions-not-allowed": "您不被允許管理$1的權限",
+	"pagepermissions-tab-text": "權限",
+	"pagepermissions-usernames-placeholder": "$1角色的使用者名稱",
+	"pagepermissions-form-desc": "<b>$1</b>的基於角色權限"
+}
