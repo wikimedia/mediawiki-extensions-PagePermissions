@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nokeoo"
+		]
+	},
+	"action-pagepermissions": "tvarkyti kiekvieno puslapio kiekvieno naudotojo prieigos valdymą",
+	"pagepermissions": "Puslapių leidimai",
+	"right-pagepermissions": "Puslapių leidimai",
+	"pagepermissions-desc": "Šis plėtinys leidžia tvarkyti prieigą kiekvienam puslapiui ir kiekvienam naudotojui",
+	"pagepermissions-title": "$1 leidimai",
+	"pagepermissions-not-allowed": "Jums neleidžiama tvarkyti $1 leidimų",
+	"pagepermissions-tab-text": "Leidimai",
+	"pagepermissions-usernames-placeholder": "$1 vaidmens naudotojų vardai",
+	"pagepermissions-form-desc": "Vaidmenimis pagrįsti <b>$1</b> leidimai",
+	"pagepermissions-standardrole-reader": "Skaitytojas",
+	"pagepermissions-standardrole-editor": "Redaktorius",
+	"pagepermissions-standardrole-manager": "Vadovas",
+	"pagepermissions-standardrole-owner": "Savininkas",
+	"pagepermissions-saved": "Leidimai išsaugoti.",
+	"pagepermissions-duplicate-usernames-error": "Šie naudotojų vardai pridėti pagal kelis vaidmenis – $1"
+}
