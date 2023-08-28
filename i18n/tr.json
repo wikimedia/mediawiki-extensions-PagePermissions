@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hedda"
+		]
+	},
+	"action-pagepermissions": "sayfa başına kullanıcı başına erişim kontrolünü yönet",
+	"pagepermissions": "Sayfa İzinleri",
+	"right-pagepermissions": "Sayfa İzinleri",
+	"pagepermissions-desc": "Bu uzantı, kullanıcı başına sayfa başına erişim kontrolü sağlar",
+	"pagepermissions-title": "$1 için izinler",
+	"pagepermissions-not-allowed": "$1 için izinleri yönetme yetkiniz yok",
+	"pagepermissions-tab-text": "İzinler",
+	"pagepermissions-usernames-placeholder": "$1 rolü için kullanıcı adları",
+	"pagepermissions-form-desc": "<b>$1</b> için rol tabanlı izinler",
+	"pagepermissions-standardrole-reader": "Okuyucu",
+	"pagepermissions-standardrole-editor": "Editör",
+	"pagepermissions-standardrole-manager": "Yönetici",
+	"pagepermissions-standardrole-owner": "Sahip",
+	"pagepermissions-saved": "İzinler kaydedildi.",
+	"pagepermissions-duplicate-usernames-error": "Bu kullanıcı adları çoklu rol altına eklenir - $1"
+}
