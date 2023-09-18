@@ -20,6 +20,7 @@ class PagePermissionsManager extends PermissionManager {
 	 */
 	public function userCan( $action, User $user, LinkTarget $page, $rigor = self::RIGOR_SECURE ): bool {
 		$this->permittedRights = RequestContext::getMain()->getConfig()->get( 'PagePermissionsRoles' );
+		$page = Title::newFromLinkTarget( $page );
 		$this->pagePermissionsPage = $page;
 
 		$table = 'pagepermissions';
