@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"action-pagepermissions": "de toegangscontrole per pagina en per gebruiker te beheren",
+	"pagepermissions": "Paginamachtigingen",
+	"right-pagepermissions": "Paginamachtigingen",
+	"pagepermissions-desc": "Deze uitbreiding biedt toegangscontrole per pagina en per gebruiker",
+	"pagepermissions-title": "Machtigingen voor $1",
+	"pagepermissions-not-allowed": "Het is u niet toegestaan de machtigingen voor $1 te beheren",
+	"pagepermissions-tab-text": "Machtigingen",
+	"pagepermissions-usernames-placeholder": "Gebruikersnamen voor de rol $1",
+	"pagepermissions-form-desc": "Op rollen gebaseerde machtigingen voor <b>$1</b>",
+	"pagepermissions-standardrole-reader": "Lezer",
+	"pagepermissions-standardrole-editor": "Bewerker",
+	"pagepermissions-standardrole-manager": "Beheerder",
+	"pagepermissions-standardrole-owner": "Eigenaar",
+	"pagepermissions-saved": "Machtigingen zijn opgeslagen.",
+	"pagepermissions-duplicate-usernames-error": "Deze gebruikersnamen worden toegevoegd onder meerdere rollen: $1"
+}
