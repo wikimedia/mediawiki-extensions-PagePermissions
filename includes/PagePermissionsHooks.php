@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 
@@ -43,14 +44,44 @@ class PagePermissionsHooks {
 	}
 
 	/**
-	 * Register UserProtect services
+	 * Register UserProtect services.
 	 *
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/MediaWikiServices
 	 * @param MediaWikiServices $container
 	 */
 	public static function onMediaWikiServices( MediaWikiServices $container ) {
 		$container->redefineService(
 			'PermissionManager',
 			static function ( MediaWikiServices $services ): PermissionManager {
+				if ( class_exists( 'MediaWiki\Language\FormatterFactory' ) ) {
+					// MW 1.42+
+					// A new parameter was added for
+					// BlockManager, which means that we
+					// need an entirely different call
+					// depending on the version.
+					$context = RequestContext::getMain();
+					$blockErrorFormatter = $services->getFormatterFactory()->getBlockErrorFormatter( $context );
+
+					return new PagePermissionsManager(
+						new ServiceOptions(
+							PermissionManager::CONSTRUCTOR_OPTIONS, $services->getMainConfig()
+						),
+						$services->getSpecialPageFactory(),
+						$services->getNamespaceInfo(),
+						$services->getGroupPermissionsLookup(),
+						$services->getUserGroupManager(),
+						$services->getBlockManager(),
+						$blockErrorFormatter,
+						$services->getHookContainer(),
+						$services->getUserCache(),
+						$services->getRedirectLookup(),
+						$services->getRestrictionStore(),
+						$services->getTitleFormatter(),
+						$services->getTempUserConfig(),
+						$services->getUserFactory(),
+						$services->getActionFactory()
+					);
+				}
 				return new PagePermissionsManager(
 					new ServiceOptions(
 						PermissionManager::CONSTRUCTOR_OPTIONS, $services->getMainConfig()
