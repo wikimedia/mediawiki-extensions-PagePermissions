@@ -7,7 +7,7 @@
 	"action-pagepermissions": "upravljanje nadzora dostopa po strani in po uporabniku",
 	"pagepermissions": "Dovoljenja strani",
 	"right-pagepermissions": "Dovoljenja strani",
-	"pagepermissions-desc": "Ta razširitev omogoča nadzor dostopa po strani in po uporabniku",
+	"pagepermissions-desc": "Ta razširitev omogoča nadzor dostopa po straneh in po uporabnikih",
 	"pagepermissions-title": "Dovoljenja za $1",
 	"pagepermissions-not-allowed": "Nimate dovoljenja za upravljanje dovoljenj za $1",
 	"pagepermissions-tab-text": "Dovoljenja",
