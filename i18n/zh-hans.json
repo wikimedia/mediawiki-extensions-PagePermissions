@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"沈澄心"
+		]
+	},
+	"action-pagepermissions": "逐页面、逐用户管理访问控制",
+	"pagepermissions": "页面权限",
+	"right-pagepermissions": "页面权限",
+	"pagepermissions-desc": "该扩展提供了逐页面、逐用户的访问控制",
+	"pagepermissions-title": "$1的权限",
+	"pagepermissions-not-allowed": "您无权管理$1的权限",
+	"pagepermissions-tab-text": "权限",
+	"pagepermissions-usernames-placeholder": "$1角色的用户名",
+	"pagepermissions-form-desc": "<b>$1</b>的基于角色权限",
+	"pagepermissions-standardrole-reader": "读者",
+	"pagepermissions-standardrole-editor": "编者",
+	"pagepermissions-standardrole-manager": "管理者",
+	"pagepermissions-standardrole-owner": "所有者",
+	"pagepermissions-saved": "权限已保存。",
+	"pagepermissions-duplicate-usernames-error": "这些用户名被添加到以下多个角色 - $1"
+}
