@@ -73,7 +73,9 @@ class PagePermissionsHooks {
 						$services->getBlockManager(),
 						$blockErrorFormatter,
 						$services->getHookContainer(),
-						$services->getUserCache(),
+						version_compare( MW_VERSION, '1.43', '>=' )
+							? $services->getUserIdentityLookup()
+							: $services->getUserCache(),
 						$services->getRedirectLookup(),
 						$services->getRestrictionStore(),
 						$services->getTitleFormatter(),
