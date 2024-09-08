@@ -4,6 +4,7 @@ use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Title\Title;
+use MediaWiki\User\UserFactory;
 
 class PagePermissionsForm {
 
@@ -31,6 +32,8 @@ class PagePermissionsForm {
 	/** @var PermissionManager */
 	private $permManager;
 
+	private UserFactory $userFactory;
+
 	/** @var IContextSource */
 	private $context;
 
@@ -50,6 +53,7 @@ class PagePermissionsForm {
 		// If it is, the form will be available in read-only to show levels.
 		$services = MediaWikiServices::getInstance();
 		$this->permManager = $services->getPermissionManager();
+		$this->userFactory = $services->getUserFactory();
 		$rigor = $this->context->getRequest()->wasPosted()
 			? PermissionManager::RIGOR_SECURE
 			: PermissionManager::RIGOR_FULL;
@@ -126,7 +130,7 @@ class PagePermissionsForm {
 			];
 			$res = $dbr->select( $table, $vars, $conds, __METHOD__ );
 			foreach ( $res as $row ) {
-				$user = User::newFromId( $row->user );
+				$user = $this->userFactory->newFromId( $row->user );
 				$this->rights[ $row->type ][] = $user->getName();
 			}
 		}
@@ -172,7 +176,7 @@ class PagePermissionsForm {
 		foreach ( $this->roles as $role ) {
 			if ( $users[ $role ] ) {
 				foreach ( $users[ $role ] as $user ) {
-					$user = User::newFromId( $user );
+					$user = $this->userFactory->newFromId( $user );
 					$this->addRowsForType( $users[ $role ], $usernames[ $role ], $role, $timestamp, $rows );
 				}
 			}
