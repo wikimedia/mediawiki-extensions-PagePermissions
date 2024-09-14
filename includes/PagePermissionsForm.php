@@ -3,8 +3,10 @@
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Permissions\RestrictionStore;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
+use Wikimedia\Rdbms\ReadOnlyMode;
 
 class PagePermissionsForm {
 
@@ -29,9 +31,8 @@ class PagePermissionsForm {
 	/** @var Action */
 	private $action;
 
-	/** @var PermissionManager */
-	private $permManager;
-
+	private PermissionManager $permissionManager;
+	private RestrictionStore $restrictionStore;
 	private UserFactory $userFactory;
 
 	/** @var IContextSource */
@@ -39,11 +40,15 @@ class PagePermissionsForm {
 
 	/**
 	 * PagePermissionsForm constructor.
-	 *
-	 * @param Action $action
-	 * @param array $roles
 	 */
-	public function __construct( Action $action, array $roles ) {
+	public function __construct(
+		Action $action,
+		array $roles,
+		PermissionManager $permissionManager,
+		ReadOnlyMode $readOnlyMode,
+		RestrictionStore $restrictionStore,
+		UserFactory $userFactory
+	) {
 		// Set instance variables.
 		$this->action = $action;
 		$this->title = $action->getTitle();
@@ -51,19 +56,18 @@ class PagePermissionsForm {
 
 		// Check if the form should be disabled.
 		// If it is, the form will be available in read-only to show levels.
-		$services = MediaWikiServices::getInstance();
-		$this->permManager = $services->getPermissionManager();
-		$this->userFactory = $services->getUserFactory();
+		$this->permissionManager = $permissionManager;
+		$this->restrictionStore = $restrictionStore;
+		$this->userFactory = $userFactory;
 		$rigor = $this->context->getRequest()->wasPosted()
 			? PermissionManager::RIGOR_SECURE
 			: PermissionManager::RIGOR_FULL;
-		$this->permErrors = $this->permManager->getPermissionErrors(
+		$this->permErrors = $this->permissionManager->getPermissionErrors(
 			'pagepermissions',
 			$action->getUser(),
 			$this->title,
 			$rigor
 		);
-		$readOnlyMode = $services->getReadOnlyMode();
 		if ( $readOnlyMode->isReadOnly() ) {
 			$this->permErrors[] = [ 'readonlytext', $readOnlyMode->getReason() ];
 		}
@@ -90,7 +94,7 @@ class PagePermissionsForm {
 	 * @throws MWException
 	 */
 	public function execute() {
-		if ( $this->permManager->getNamespaceRestrictionLevels(
+		if ( $this->permissionManager->getNamespaceRestrictionLevels(
 				$this->title->getNamespace()
 			) === [ '' ]
 		) {
@@ -246,9 +250,7 @@ class PagePermissionsForm {
 			$out->addHTML( "<div class='error'>{$err}</div>\n" );
 		}
 
-		if ( MediaWikiServices::getInstance()->getRestrictionStore()
-			->listApplicableRestrictionTypes( $title ) === []
-		) {
+		if ( $this->restrictionStore->listApplicableRestrictionTypes( $title ) === [] ) {
 			// No restriction types available for the current title
 			// this might happen if an extension alters the available types
 			$out->setPageTitle( $context->msg(

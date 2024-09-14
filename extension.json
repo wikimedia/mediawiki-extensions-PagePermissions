@@ -14,7 +14,15 @@
 		]
 	},
 	"Actions": {
-		"pagepermissions": "PagePermissionsAction"
+		"pagepermissions": {
+			"class": "PagePermissionsAction",
+			"services": [
+				"PermissionManager",
+				"ReadOnlyMode",
+				"RestrictionStore",
+				"UserFactory"
+			]
+		}
 	},
 	"Hooks": {
 		"PageDeleteComplete": "PagePermissionsHooks::onPageDeleteComplete",
