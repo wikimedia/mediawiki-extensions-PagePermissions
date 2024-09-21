@@ -115,7 +115,7 @@ class PagePermissionsForm {
 		$vars[ 'user' ] = 'pper_user_id';
 		$vars['type'] = 'pper_role';
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		foreach ( $this->roles as $role ) {
 			$conds = [
@@ -147,7 +147,7 @@ class PagePermissionsForm {
 		$request = $this->context->getRequest();
 		$contextUser = $this->context->getUser();
 
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
 		if ( $title->exists() ) {
 			$tableName = 'pagepermissions';
@@ -296,7 +296,7 @@ class PagePermissionsForm {
 			return [];
 		}
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$res = $dbr->select(
 			'user',
 			[ 'user_id', 'user_name' ],
@@ -330,7 +330,7 @@ class PagePermissionsForm {
 	 */
 	private static function getAllUserNames() {
 		$usernames = [];
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$res = $dbr->select( 'user', 'user_name' );
 		foreach ( $res as $row ) {
 			$usernames[] = $row->user_name;
