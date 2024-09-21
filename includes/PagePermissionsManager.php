@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Linker\LinkTarget;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 
 class PagePermissionsManager extends PermissionManager {
@@ -27,7 +28,7 @@ class PagePermissionsManager extends PermissionManager {
 		$vars[ 'user' ] = 'pper_user_id';
 		$vars['type'] = 'pper_role';
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		$conds = [
 			'pper_page_id' => $page->getArticleId(),

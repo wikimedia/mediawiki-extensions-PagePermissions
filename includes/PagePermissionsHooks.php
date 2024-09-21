@@ -121,7 +121,7 @@ class PagePermissionsHooks {
 		int $pageID, MediaWiki\Revision\RevisionRecord $deletedRev,
 		ManualLogEntry $logEntry, int $archivedRevisionCount
 	) {
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 		$dbw->delete(
 			'pagepermissions',
 			[
