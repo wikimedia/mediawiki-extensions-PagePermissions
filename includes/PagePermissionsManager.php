@@ -3,6 +3,8 @@
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 
 class PagePermissionsManager extends PermissionManager {
 

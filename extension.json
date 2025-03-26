@@ -67,7 +67,7 @@
 		"remoteExtPath": "PagePermissions/modules"
 	},
 	"requires": {
-		"MediaWiki": ">= 1.38.0"
+		"MediaWiki": ">= 1.41"
 	},
 	"manifest_version": 1
 }
