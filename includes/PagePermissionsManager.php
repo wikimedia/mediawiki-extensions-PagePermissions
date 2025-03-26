@@ -27,8 +27,10 @@ class PagePermissionsManager extends PermissionManager {
 		$this->pagePermissionsPage = $page;
 
 		$table = 'pagepermissions';
-		$vars[ 'user' ] = 'pper_user_id';
-		$vars['type'] = 'pper_role';
+		$vars = [
+			'user' => 'pper_user_id',
+			'type' => 'pper_role',
+		];
 
 		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
@@ -47,7 +49,6 @@ class PagePermissionsManager extends PermissionManager {
 		} else {
 			return parent::userCan( $action, $user, $page, $rigor );
 		}
-		$this->pagePermissionsPage = null;
 	}
 
 	/**

@@ -123,8 +123,10 @@ class PagePermissionsForm {
 		$pageId = $this->title->getArticleID();
 
 		$table = 'pagepermissions';
-		$vars[ 'user' ] = 'pper_user_id';
-		$vars['type'] = 'pper_role';
+		$vars = [
+			'user' => 'pper_user_id',
+			'type' => 'pper_role',
+		];
 
 		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
@@ -160,10 +162,8 @@ class PagePermissionsForm {
 
 		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
-		if ( $title->exists() ) {
-			$tableName = 'pagepermissions';
-			$deleteConds = [ 'pper_page_id' => $title->getArticleID() ];
-		}
+		$tableName = 'pagepermissions';
+		$deleteConds = [ 'pper_page_id' => $title->getArticleID() ];
 
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->delete( $tableName, $deleteConds, __METHOD__ );
@@ -187,7 +187,6 @@ class PagePermissionsForm {
 			}
 		}
 
-		// @phan-suppress-next-line SecurityCheck-SQLInjection
 		$dbw->insert( $tableName, array_unique( $rows, SORT_REGULAR ), __METHOD__ );
 
 		$dbw->endAtomic( __METHOD__ );
@@ -337,7 +336,7 @@ class PagePermissionsForm {
 	private static function getAllUserNames() {
 		$usernames = [];
 		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
-		$res = $dbr->select( 'user', 'user_name' );
+		$res = $dbr->select( 'user', 'user_name', '', __METHOD__ );
 		foreach ( $res as $row ) {
 			$usernames[] = $row->user_name;
 		}
