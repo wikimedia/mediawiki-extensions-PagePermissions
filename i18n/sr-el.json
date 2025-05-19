@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"pagepermissions-title": "Prava za $1",
+	"pagepermissions-tab-text": "Dozvole",
+	"pagepermissions-standardrole-editor": "Urednik",
+	"pagepermissions-standardrole-owner": "Vlasnik"
+}
