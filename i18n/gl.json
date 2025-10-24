@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"action-pagepermissions": "xestionar o control de acceso por páxina e por usuario",
+	"pagepermissions": "Permisos por páxina",
+	"right-pagepermissions": "Xestionar permisos por páxina",
+	"pagepermissions-desc": "Esta extensión proporciona control de acceso por páxina e por usuario",
+	"pagepermissions-title": "Permisos para «$1»",
+	"pagepermissions-not-allowed": "Non tes permiso para xestionar os permisos de «$1»",
+	"pagepermissions-tab-text": "Permisos",
+	"pagepermissions-usernames-placeholder": "Nomes de usuario para o rol «$1»",
+	"pagepermissions-form-desc": "Permisos baseados en roles para «<b>$1</b>»",
+	"pagepermissions-standardrole-reader": "Lector",
+	"pagepermissions-standardrole-editor": "Editor",
+	"pagepermissions-standardrole-manager": "Xestor",
+	"pagepermissions-standardrole-owner": "Propietario",
+	"pagepermissions-saved": "Gardáronse os permisos.",
+	"pagepermissions-duplicate-usernames-error": "Estes nomes de usuario engádense baixo varios roles: $1"
+}
