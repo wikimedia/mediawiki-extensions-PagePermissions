@@ -256,7 +256,7 @@ class PagePermissionsForm {
 			$out->setPageTitle( $context->msg(
 				'protect-norestrictiontypes-title',
 				$title->getPrefixedText()
-			) );
+			)->escaped() );
 			$out->addWikiTextAsInterface(
 				$context->msg( 'protect-norestrictiontypes-text' )->plain()
 			);
@@ -267,7 +267,7 @@ class PagePermissionsForm {
 		# the protection settings at this time
 		if ( $this->disabled ) {
 			$out->setPageTitle(
-				$context->msg( 'pagepermissions-not-allowed', $title->getPrefixedText() )
+				$context->msg( 'pagepermissions-not-allowed', $title->getPrefixedText() )->escaped()
 			);
 			$out->addWikiTextAsInterface(
 				$out->formatPermissionsErrorMessage( $this->permErrors, 'pagepermissions' )
@@ -277,7 +277,7 @@ class PagePermissionsForm {
 			] );
 			$config[ 'permissionsError' ] = $this->permErrors;
 		} else {
-			$out->setPageTitle( $context->msg( 'pagepermissions-title', $title->getPrefixedText() ) );
+			$out->setPageTitle( $context->msg( 'pagepermissions-title', $title->getPrefixedText() )->escaped() );
 			$out->addWikiMsg( 'pagepermissions-form-desc', wfEscapeWikiText( $title->getPrefixedText() ) );
 			$config[ 'permissionsConfig' ] = [
 				'roles' => $this->roles,
