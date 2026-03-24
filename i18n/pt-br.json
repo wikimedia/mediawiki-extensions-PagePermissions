@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eduardoaddad"
+		]
+	},
+	"pagepermissions": "Permissões da pasta",
+	"right-pagepermissions": "Permissões da pasta",
+	"pagepermissions-desc": "Esta extensão fornece controle de acesso por página por usuário",
+	"pagepermissions-title": "Permissões para $1",
+	"pagepermissions-tab-text": "Permissões",
+	"pagepermissions-standardrole-reader": "Leitor",
+	"pagepermissions-standardrole-editor": "Editor",
+	"pagepermissions-standardrole-manager": "Gerente",
+	"pagepermissions-standardrole-owner": "Proprietário"
+}
