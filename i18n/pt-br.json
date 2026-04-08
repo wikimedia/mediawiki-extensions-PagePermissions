@@ -4,6 +4,7 @@
 			"Eduardoaddad"
 		]
 	},
+	"action-pagepermissions": "gerenciar controle de acesso por página por usuário",
 	"pagepermissions": "Permissões da pasta",
 	"right-pagepermissions": "Permissões da pasta",
 	"pagepermissions-desc": "Esta extensão fornece controle de acesso por página por usuário",
