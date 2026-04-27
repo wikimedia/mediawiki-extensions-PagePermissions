@@ -1,15 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
+			"Tensama0415",
 			"Ykhwong"
 		]
 	},
+	"action-pagepermissions": "문서별 사용자별 접근 제어를 관리할",
 	"pagepermissions": "문서 권한",
 	"right-pagepermissions": "문서 권한",
+	"pagepermissions-desc": "이 확장 기능은 문서별 사용자별 접근 제어를 제공합니다",
 	"pagepermissions-title": "$1의 권한",
 	"pagepermissions-not-allowed": "$1에 대한 권한을 관리할 권한이 없습니다.",
 	"pagepermissions-tab-text": "권한",
 	"pagepermissions-usernames-placeholder": "$1 역할의 사용자 이름",
+	"pagepermissions-form-desc": "<b>$1</b> 에 대한 역할 기반 권한 설정",
 	"pagepermissions-standardrole-reader": "독자",
 	"pagepermissions-standardrole-editor": "편집자",
 	"pagepermissions-standardrole-manager": "관리자",
