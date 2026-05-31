@@ -3,6 +3,7 @@
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Permissions\PermissionStatus;
 use MediaWiki\Permissions\RestrictionStore;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
@@ -10,8 +11,8 @@ use Wikimedia\Rdbms\ReadOnlyMode;
 
 class PagePermissionsForm {
 
-	/** @var array Permissions errors for the protect action */
-	private $permErrors = [];
+	/** @var PermissionStatus */
+	private $permissionStatus;
 
 	/** @var Title */
 	private $title;
@@ -62,16 +63,16 @@ class PagePermissionsForm {
 		$rigor = $this->context->getRequest()->wasPosted()
 			? PermissionManager::RIGOR_SECURE
 			: PermissionManager::RIGOR_FULL;
-		$this->permErrors = $this->permissionManager->getPermissionErrors(
+		$this->permissionStatus = $permissionManager->getPermissionStatus(
 			'pagepermissions',
 			$action->getUser(),
 			$this->title,
 			$rigor
 		);
 		if ( $readOnlyMode->isReadOnly() ) {
-			$this->permErrors[] = [ 'readonlytext', $readOnlyMode->getReason() ];
+			$this->permissionStatus->error( 'readonlytext', $readOnlyMode->getReason() );
 		}
-		$this->disabled = $this->permErrors !== [];
+		$this->disabled = !$this->permissionStatus->isOK();
 		$this->disabledAttrib = $this->disabled
 			? [ 'disabled' => 'disabled' ]
 			: [];
@@ -270,9 +271,9 @@ class PagePermissionsForm {
 				$context->msg( 'pagepermissions-not-allowed', $title->getPrefixedText() )->escaped()
 			);
 			$out->addWikiTextAsInterface(
-				$out->formatPermissionsErrorMessage( $this->permErrors, 'pagepermissions' )
+				$out->formatPermissionStatus( $this->permissionStatus, 'pagepermissions' )
 			);
-			$config[ 'permissionsError' ] = $this->permErrors;
+			$config[ 'permissionsError' ] = $this->permissionStatus->getMessages( 'error' );
 		} else {
 			$out->setPageTitle( $context->msg( 'pagepermissions-title', $title->getPrefixedText() )->escaped() );
 			$out->addWikiMsg( 'pagepermissions-form-desc', wfEscapeWikiText( $title->getPrefixedText() ) );
