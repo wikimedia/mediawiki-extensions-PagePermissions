@@ -272,9 +272,6 @@ class PagePermissionsForm {
 			$out->addWikiTextAsInterface(
 				$out->formatPermissionsErrorMessage( $this->permErrors, 'pagepermissions' )
 			);
-			$out->addJsConfigVars( [
-				'permissionsError' => $this->permErrors
-			] );
 			$config[ 'permissionsError' ] = $this->permErrors;
 		} else {
 			$out->setPageTitle( $context->msg( 'pagepermissions-title', $title->getPrefixedText() )->escaped() );
