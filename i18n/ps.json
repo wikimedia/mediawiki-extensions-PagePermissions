@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"action-pagepermissions": "د هر مخ د هر کارن د لاسرسي کنترول مهارول",
+	"pagepermissions": "مخ اجازې",
+	"right-pagepermissions": "مخ اجازې",
+	"pagepermissions-desc": "دا شاتاړی د هر مخ د هر کارن لپاره د لاسرسي کنترول چمتو کوي",
+	"pagepermissions-title": "د $1 پرېښه",
+	"pagepermissions-not-allowed": "تاسو ته د $1 د اجازه ليکونو مهارولو اجازه نشته",
+	"pagepermissions-tab-text": "اجازې",
+	"pagepermissions-usernames-placeholder": "$1 رول لپاره کارن‌نومونه",
+	"pagepermissions-form-desc": "د رول پر بنسټ د <b>$1</b> لپاره اجازې",
+	"pagepermissions-standardrole-reader": "لوستونکی",
+	"pagepermissions-standardrole-editor": "سمونگر",
+	"pagepermissions-standardrole-manager": "مهارگر",
+	"pagepermissions-standardrole-owner": "څښتن",
+	"pagepermissions-saved": "اجازې خوندي شوې.",
+	"pagepermissions-duplicate-usernames-error": "دا کارن‌نومونه د څو رولونو لاندې ورگډ شوې دي - $1"
+}
