@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Debug\MWDebug;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;

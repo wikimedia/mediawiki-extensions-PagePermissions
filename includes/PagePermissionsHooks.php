@@ -2,8 +2,12 @@
 
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Installer\DatabaseUpdater;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\ProperPageIdentity;
+use MediaWiki\Permissions\Authority;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Revision\RevisionRecord;
 
 class PagePermissionsHooks {
 
@@ -82,18 +86,18 @@ class PagePermissionsHooks {
 	/**
 	 * Occurs after the delete article request has been processed
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ArticleDeleteComplete
-	 * @param MediaWiki\Page\ProperPageIdentity $page
-	 * @param MediaWiki\Permissions\Authority $deleter
+	 * @param ProperPageIdentity $page
+	 * @param Authority $deleter
 	 * @param string $reason
 	 * @param int $pageID
-	 * @param MediaWiki\Revision\RevisionRecord $deletedRev
+	 * @param RevisionRecord $deletedRev
 	 * @param ManualLogEntry $logEntry
 	 * @param int $archivedRevisionCount
 	 */
 	public static function onPageDeleteComplete(
-		MediaWiki\Page\ProperPageIdentity $page,
-		MediaWiki\Permissions\Authority $deleter, string $reason,
-		int $pageID, MediaWiki\Revision\RevisionRecord $deletedRev,
+		ProperPageIdentity $page,
+		Authority $deleter, string $reason,
+		int $pageID, RevisionRecord $deletedRev,
 		ManualLogEntry $logEntry, int $archivedRevisionCount
 	) {
 		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
